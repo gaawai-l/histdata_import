@@ -102,7 +102,7 @@ for symbol in config.symbol_list:
                             folder_path+"\\"+file, filename_arr[0], symbol)
                     if "DAT_MS_XAUUSD_M1" in file and "zip" in file and config.import_type == "m1":
                         filename_arr = os.path.splitext(file)
-                        if len(filename_arr[0]) == 23:
+                        if len(filename_arr[0]) == 21:
                             import_csv_to_mssql_m1(
                                 folder_path+"\\"+file, filename_arr[0], symbol)
         cur_datetime = cur_datetime+relativedelta(years=1)
