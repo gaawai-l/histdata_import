@@ -42,7 +42,7 @@ def import_csv_to_mssql_tick(path, name, symbol):
 
         insert_list.append(insert_params)
     cursor.executemany('''
-                    INSERT INTO Prices.dbo.T (symbol,time, ask, bid)
+                    INSERT INTO T (symbol,time, ask, bid)
                     VALUES (?,?,?,?)
                     ''', insert_list)
     conn.commit()
@@ -77,7 +77,7 @@ def import_csv_to_mssql_m1(path, name, symbol):
         )
         insert_list.append(insert_params)
     cursor.executemany('''
-                    INSERT INTO Prices.dbo.M1 (symbol,time,o, h,l,c)
+                    INSERT INTO M1 (symbol,time,o, h,l,c)
                     VALUES (?,?,?,?,?,?)
                     ''', insert_list)
     conn.commit()
